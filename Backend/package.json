@@ -1,0 +1,45 @@
+{
+  "name": "backend_penggajian",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "jest --coverage",
+    "test:coverage": "jest --coverage",
+    "test:mocha": "mocha",
+    "test:functional": "mocha 'test/unit/**/*.test.mjs'",
+    "test:regression": "mocha 'test/regression/**/*.test.mjs' --reporter mochawesome --reporter-options reportDir=reports/regression,reportFilename=regression-report",
+    "test:stress": "bash test/stress/run-stress-test.sh"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "argon2": "^0.30.3",
+    "connect-session-sequelize": "^7.1.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "express-rate-limit": "^8.3.2",
+    "express-session": "^1.17.3",
+    "express-validator": "^7.3.2",
+    "mysql2": "^3.3.0",
+    "nodemon": "^2.0.22",
+    "sequelize": "^6.31.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/preset-env": "^7.24.0",
+    "@jest/globals": "^30.3.0",
+    "babel-jest": "^30.3.0",
+    "chai": "^4.4.1",
+    "jest": "^30.3.0",
+    "mocha": "^10.7.0",
+    "mochawesome": "^7.1.3",
+    "sinon": "^17.0.0",
+    "supertest": "^7.2.2"
+  }
+}
