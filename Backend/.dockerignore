@@ -1,0 +1,11 @@
+node_modules
+coverage
+reports
+.env
+__tests__
+test
+*.test.js
+*.test.mjs
+.mocharc.yml
+jest.config.js
+babel.config.cjs

@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: payroll-backend
+    runtime: node
+    rootDir: Backend
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: APP_PORT
+        value: 5001
+      - key: SESS_SECRET
+        generateValue: true
+      - key: DB_NAME
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASS
+        sync: false
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        value: 3306
+      - key: CLIENT_URL
+        sync: false
+      - key: NODE_ENV
+        value: production
