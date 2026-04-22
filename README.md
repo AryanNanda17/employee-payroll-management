@@ -5,7 +5,6 @@ A full-stack, production-grade payroll management application built with MySQL, 
 ## Table of Contents
 
 - [Features](#features)
-- [Screenshots](#screenshots)
 - [Tech Stack](#tech-stack)
 - [Architecture](#architecture)
 - [Prerequisites](#prerequisites)
@@ -39,38 +38,6 @@ A full-stack, production-grade payroll management application built with MySQL, 
 - Protected API routes with middleware guards
 - Rate limiting on login endpoint
 - Input validation on all endpoints
-
-## Screenshots
-
-A quick visual tour of both portals. Full-size captures live in [`docs/screenshots/`](docs/screenshots).
-
-### Admin Portal
-
-**Login**
-
-![Admin login](docs/screenshots/admin-login-after-fix.png)
-
-**Dashboard — KPI overview**
-
-![Admin dashboard overview](docs/screenshots/admin-dashboard-full.png)
-
-**Dashboard — gender split and employee status charts**
-
-![Admin dashboard with charts](docs/screenshots/dashboard-with-charts.png)
-
-**Master Data — Employees (with position join)**
-
-![Employee master data](docs/screenshots/employee-data-with-position.png)
-
-### Employee Portal
-
-**Login**
-
-![Employee login](docs/screenshots/employee-login.png)
-
-**Personal dashboard**
-
-![Employee dashboard](docs/screenshots/employee-dashboard-fk.png)
 
 ## Tech Stack
 
