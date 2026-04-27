@@ -7,6 +7,7 @@ A full-stack, production-grade payroll management application built with MySQL, 
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Architecture](#architecture)
+- [Diagrams](#diagrams)
 - [Prerequisites](#prerequisites)
 - [Getting Started](#getting-started)
 - [Default Credentials](#default-credentials)
@@ -106,6 +107,28 @@ mern-employee-salary-management/
 │   └── index.html        # Vite HTML entry
 └── README.md
 ```
+
+## Diagrams
+
+System design artefacts are stored in [`docs/diagrams/`](docs/diagrams). Editable Mermaid (`.mmd`) and PlantUML (`.puml`) sources live alongside the rendered PNGs.
+
+### Use Case Diagram
+
+Captures the primary actors (Admin, Employee) and the operations they can perform across the portal.
+
+![Use Case Diagram](docs/diagrams/use-case.png)
+
+### Class Diagram
+
+Shows the core domain entities (Employee, Position, Attendance, SalaryDeduction) and their Sequelize relationships.
+
+![Class Diagram](docs/diagrams/class-diagram.png)
+
+### Sequence Diagram
+
+Illustrates the end-to-end flow of a salary computation request from the React client through Express, Sequelize, and MySQL.
+
+![Sequence Diagram](docs/diagrams/sequence-diagram.png)
 
 ## Prerequisites
 
