@@ -188,9 +188,9 @@ Navigate to **http://localhost:5173** in your browser.
 | Role | Username | Password |
 |------|----------|----------|
 | Admin | `admin` | `admin123` |
-| Employee | `priya` | `password123` |
-| Employee | `rahul` | `password123` |
-| Employee | `vikram` | `password123` |
+| Employee | `priya` | `admin123` |
+| Employee | `rahul` | `admin123` |
+| Employee | `vikram` | `admin123` |
 
 ## API Documentation
 
