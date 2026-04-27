@@ -1,0 +1,29 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'15px'}}}%%
+sequenceDiagram
+    autonumber
+    actor Admin
+    participant FE as React SPA
+    participant BE as Express API
+    participant DB as MySQL
+
+    Admin->>FE: Login
+    FE->>BE: POST /login
+    BE->>DB: verify (Argon2)
+    BE-->>FE: Set-Cookie (session)
+
+    Admin->>FE: Record attendance
+    FE->>BE: POST /attendance
+    BE->>DB: INSERT attendance
+
+    Admin->>FE: Run payroll for month
+    FE->>BE: POST /salary/run
+    BE->>DB: read Employee + Position +<br/>Attendance + Deductions
+    BE->>BE: gross = basic + allowances<br/>net = gross − deductions
+    BE->>DB: INSERT payroll
+    BE-->>FE: salary report
+
+    Admin->>FE: Open payslip
+    FE->>BE: GET /salary/slip/:id
+    BE->>DB: SELECT payroll
+    BE-->>FE: payroll JSON
+    FE-->>Admin: printable payslip

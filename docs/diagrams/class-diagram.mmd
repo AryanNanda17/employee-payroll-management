@@ -1,0 +1,58 @@
+%%{init: {'theme':'base','themeVariables':{'fontSize':'15px'}}}%%
+classDiagram
+    direction LR
+
+    class Employee {
+        +nik
+        +employee_name
+        +username
+        +password
+        +role
+        +login()
+    }
+
+    class Position {
+        +position_name
+        +basic_salary
+        +transport_allowance
+        +meal_allowance
+    }
+
+    class Attendance {
+        +month, year
+        +present_days
+        +sick_days
+        +absent_days
+    }
+
+    class LeaveRequest {
+        +start_date, end_date
+        +status
+    }
+
+    class SalaryDeduction {
+        +per_absent_day
+        +per_sick_day
+    }
+
+    class Payroll {
+        +month, year
+        +gross_salary
+        +total_deduction
+        +net_salary
+        +compute()
+    }
+
+    class Transaction {
+        +amount
+        +paid_on
+    }
+
+    Employee "*" --> "1" Position
+    Employee "1" --> "*" Attendance
+    Employee "1" --> "*" LeaveRequest
+    Employee "1" --> "*" Payroll
+    Payroll  "1" --> "*" Transaction
+    Payroll ..> SalaryDeduction : uses
+    Payroll ..> Attendance : uses
+    Payroll ..> Position : uses

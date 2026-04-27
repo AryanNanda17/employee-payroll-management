@@ -1,0 +1,53 @@
+@startuml
+title Use Case Diagram - Payroll Management System
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam ArrowColor #1E3A8A
+skinparam ActorBorderColor #92400E
+skinparam ActorBackgroundColor #FEF3C7
+skinparam UsecaseBorderColor #1E3A8A
+skinparam UsecaseBackgroundColor #DBEAFE
+skinparam Padding 6
+skinparam DefaultFontSize 14
+skinparam packageStyle rectangle
+
+left to right direction
+
+actor "Admin" as Admin
+
+rectangle "Payroll Management System" {
+    usecase "Login" as UC1
+    usecase "Manage Employees\n& Positions" as UC2
+    usecase "Manage Attendance\n& Leave" as UC3
+    usecase "Configure Deductions" as UC4
+    usecase "Run Payroll &\nGenerate Payslip" as UC5
+    usecase "View Reports &\nRecord Disbursement" as UC6
+    usecase "View Own Salary,\nAttendance & Payslip" as UC7
+    usecase "Submit Leave Request" as UC8
+}
+
+actor "Employee" as Employee
+
+Admin --> UC1
+Admin --> UC2
+Admin --> UC3
+Admin --> UC4
+Admin --> UC5
+Admin --> UC6
+
+Employee --> UC1
+Employee --> UC7
+Employee --> UC8
+
+UC5 ..> UC2 : <<include>>
+UC5 ..> UC3 : <<include>>
+UC5 ..> UC4 : <<include>>
+
+' Force Admin and Employee to opposite sides
+Admin -[hidden]right-> UC1
+UC1 -[hidden]right-> Employee
+Admin -[hidden]down-> UC2
+UC8 -[hidden]up-> Employee
+
+@enduml

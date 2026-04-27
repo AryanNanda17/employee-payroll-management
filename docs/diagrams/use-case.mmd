@@ -1,0 +1,36 @@
+%%{init: {'theme':'base','themeVariables':{'primaryColor':'#dbeafe','primaryBorderColor':'#1e3a8a','lineColor':'#1e3a8a','fontSize':'16px'}}}%%
+flowchart LR
+    Admin(("👤<br/>Admin"))
+    Employee(("👤<br/>Employee"))
+
+    subgraph SYSTEM["Payroll Management System"]
+        direction TB
+        UC1(["Login"])
+        UC2(["Manage Employees<br/>& Positions"])
+        UC3(["Manage Attendance<br/>& Leave"])
+        UC4(["Configure Deductions"])
+        UC5(["Run Payroll &<br/>Generate Payslip"])
+        UC6(["View Reports &<br/>Record Disbursement"])
+        UC7(["View Own Salary,<br/>Attendance & Payslip"])
+        UC8(["Submit Leave Request"])
+    end
+
+    Admin --- UC1
+    Admin --- UC2
+    Admin --- UC3
+    Admin --- UC4
+    Admin --- UC5
+    Admin --- UC6
+
+    Employee --- UC1
+    Employee --- UC7
+    Employee --- UC8
+
+    UC5 -. include .-> UC2
+    UC5 -. include .-> UC3
+    UC5 -. include .-> UC4
+
+    classDef actor fill:#fef3c7,stroke:#92400e,stroke-width:2px,color:#000
+    classDef usecase fill:#dbeafe,stroke:#1e3a8a,color:#000
+    class Admin,Employee actor
+    class UC1,UC2,UC3,UC4,UC5,UC6,UC7,UC8 usecase
