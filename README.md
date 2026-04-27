@@ -110,7 +110,7 @@ mern-employee-salary-management/
 
 ## Diagrams
 
-System design artefacts are stored in [`docs/diagrams/`](docs/diagrams). Editable Mermaid (`.mmd`) and PlantUML (`.puml`) sources live alongside the rendered PNGs.
+System design artefacts are stored in [`docs/diagrams/`](docs/diagrams).
 
 ### Use Case Diagram
 
